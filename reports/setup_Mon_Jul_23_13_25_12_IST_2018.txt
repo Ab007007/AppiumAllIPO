@@ -1,0 +1,19 @@
+---Test case execution started---setup-started
+---INFO-----Completeds Executing Test - validateLoginTest
+---INFO------ Clicking on Next Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------ Clicking on Next Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------Allowing all notifications---
+---INFO------ Allowed all Notificaitons---
+---INFO------ Clicking on Google Login Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------ Selecting First Google Account ---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------Validating Home Screen ---
+---INFO------ Validating Home Page---
+---INFO---inside after method with 2
+---INFO---2
+---INFO---Path D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_13_26_22_IST_2018.png
+---SCREENSHOT---<a href='D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_13_26_22_IST_2018.png' data-featherlight='image'><img class='report-img' src='file:///D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_13_26_22_IST_2018.png' /></a>
+---Test case execution End---ending the test -ended

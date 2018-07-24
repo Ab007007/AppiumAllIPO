@@ -1,0 +1,3 @@
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Located by Locator map: 
+- native content: "By.chained({By.id: com.appbootup.ipo.news:id/btn_next1})" 
+- html content: "by id or name "nextButton"" (tried for 120 second(s) with 500 milliseconds interval)

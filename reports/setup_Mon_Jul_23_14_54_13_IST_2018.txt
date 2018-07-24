@@ -1,0 +1,115 @@
+---Test case execution started---setup-started
+---INFO-----Completeds Executing Test - validateLoginTest
+---INFO------ Clicking on Next Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------ Clicking on Next Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------Allowing all notifications---
+---INFO------ Allowed all Notificaitons---
+---INFO------ Clicking on Google Login Button---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------ Selecting First Google Account ---
+---INFO------[INFO:PASS]-->Click operation successfull---
+---INFO------Validating Home Screen ---
+---INFO------ Validating Home Page---
+---PASS---Test Passed With Home Screen Validation
+---INFO------ Selecting First IPO in the Home Page ---
+---INFO-----Title ---TCNS Clothing Co. Limited
+---INFO------Date---6 days ago - (18/07/2018)
+---INFO------Short notes ---TCNS Clothing Co. Limited designs, manufactures, markets, and retail women’s bra...
+---INFO---[INFO] - TCNS Clothing Co. Limited
+---INFO---[INFO] -  @ 20-Jul-2018 20:30:00 IST
+---INFO---[INFO] - ? 1125.13 Cr
+---INFO---[INFO] - Issue Size
+---INFO---[INFO] - ? 2.0
+---INFO---[INFO] - Face Value
+---INFO---[INFO] - ? 714-716
+---INFO---[INFO] - Price Band
+---INFO---[INFO] - 18/07/2018 - 20/07/2018
+---INFO---[INFO] - Issue Period
+---INFO---[INFO] - 20
+---INFO---[INFO] - Lot Size
+---INFO---[INFO] - ---Validating Price ---
+---INFO---[INFO] - ---faceValue---? 2.0
+---INFO---[INFO] - ---issuePrice---? 714-716
+---INFO---[INFO] - ---premiumPrice---? 20-22
+---INFO---[INFO] - ---Validating Price ---
+---INFO---[INFO] - ---SubscriptionComment---2,74,995 applications for 1x time Subscription in Retail
+---INFO---[INFO] - ---riiApplicationCount---87,074
+---INFO---[INFO] - ---riiApplicationMaxCount---2,74,996
+---INFO---[INFO] - ---riiApplicationCountPrediction---0
+---INFO---[INFO] - --- Validating subscription in details page ---
+---INFO---[INFO] - 13.47
+---INFO---[INFO] - 5.07
+---INFO---[INFO] - 0.67
+---INFO---[INFO] - Subscription NSE--3.09
+---INFO---[INFO] - Subscription BSE--2.18
+---INFO---[INFO] - Subscription TOTAL --5.27
+---INFO---[INFO] - ---Validating Investor Table ---com.appbootup.ipo.news:id/ipoExchangeDetailSubscription
+---INFO---[INFO] - --Table Values ---Investors
+---INFO---[INFO] - --Table Values ---NSE
+---INFO---[INFO] - --Table Values ---BSE
+---INFO---[INFO] - --Table Values ---TOTAL
+---INFO---[INFO] - --Table Values ---QIB %
+---INFO---[INFO] - --Table Values ---8.91
+---INFO---[INFO] - --Table Values ---4.56
+---INFO---[INFO] - --Table Values ---13.47
+---INFO---[INFO] - --Table Values ---NII %
+---INFO---[INFO] - --Table Values ---2.10
+---INFO---[INFO] - --Table Values ---2.97
+---INFO---[INFO] - --Table Values ---5.07
+---INFO---[INFO] - --Table Values ---RII %
+---INFO---[INFO] - --Table Values ---0.19
+---INFO---[INFO] - --Table Values ---0.48
+---INFO---[INFO] - --Table Values ---0.67
+---INFO---[INFO] - ---Validating Investor Table ---com.appbootup.ipo.news:id/qibDetailSubscription
+---INFO---[INFO] - --Table Values ---QIB
+---INFO---[INFO] - --Table Values ---NSE
+---INFO---[INFO] - --Table Values ---BSE
+---INFO---[INFO] - --Table Values ---TOTAL
+---INFO---[INFO] - --Table Values ---13.47 x
+---INFO---[INFO] - --Table Values ---FII
+---INFO---[INFO] - --Table Values ---7341060
+---INFO---[INFO] - --Table Values ---9084460
+---INFO---[INFO] - --Table Values ---16425520
+---INFO---[INFO] - --Table Values ---5.23
+---INFO---[INFO] - --Table Values ---MF
+---INFO---[INFO] - --Table Values ---988020
+---INFO---[INFO] - --Table Values ---2832780
+---INFO---[INFO] - --Table Values ---3820800
+---INFO---[INFO] - --Table Values ---1.22
+---INFO---[INFO] - --Table Values ---DFI
+---INFO---[INFO] - --Table Values ---838000
+---INFO---[INFO] - --Table Values ---181560
+---INFO---[INFO] - --Table Values ---1019560
+---INFO---[INFO] - --Table Values ---0.32
+---INFO---[INFO] - --Table Values ---Others
+---INFO---[INFO] - --Table Values ---18826540
+---INFO---[INFO] - --Table Values ---2234640
+---INFO---[INFO] - --Table Values ---21061180
+---INFO---[INFO] - --Table Values ---6.70
+---INFO---[INFO] - ---Validating Investor Table ---com.appbootup.ipo.news:id/niiDetailSubscription
+---INFO---[INFO] - --Table Values ---NII
+---INFO---[INFO] - --Table Values ---NSE
+---INFO---[INFO] - --Table Values ---BSE
+---INFO---[INFO] - --Table Values ---TOTAL
+---INFO---[INFO] - --Table Values ---5.08 x
+---INFO---[INFO] - --Table Values ---Corporates
+---INFO---[INFO] - --Table Values ---1666300
+---INFO---[INFO] - --Table Values ---180620
+---INFO---[INFO] - --Table Values ---1846920
+---INFO---[INFO] - --Table Values ---0.78
+---INFO---[INFO] - --Table Values ---Individuals
+---INFO---[INFO] - --Table Values ---3131000
+---INFO---[INFO] - --Table Values ---6469400
+---INFO---[INFO] - --Table Values ---9600400
+---INFO---[INFO] - --Table Values ---4.07
+---INFO---[INFO] - --Table Values ---Others
+---INFO---[INFO] - --Table Values ---154780
+---INFO---[INFO] - --Table Values ---361660
+---INFO---[INFO] - --Table Values ---516440
+---INFO---[INFO] - --Table Values ---0.22
+---INFO---[INFO] - --- Validating Company Financials in details page ---
+---INFO---inside after method with 1
+---INFO---2
+---Test case execution End---ending the test -ended

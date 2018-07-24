@@ -1,0 +1,11 @@
+---Test case execution started---setup-started
+---INFO-----Completeds Executing Test - validateLoginTest
+---INFO------ Clicking on Next Button---
+---INFO-------getVisiblieElement---Expected condition failed: waiting for visibility of Located by Locator map: 
+- native content: "By.chained({By.id: com.appbootup.ipo.news:id/btn_next1})" 
+- html content: "by id or name "nextButton"" (tried for 120 second(s) with 500 milliseconds interval)
+---INFO---inside after method with 2
+---INFO---2
+---INFO---Path D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_15_00_20_IST_2018.png
+---SCREENSHOT---<a href='D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_15_00_20_IST_2018.png' data-featherlight='image'><img class='report-img' src='file:///D:\QSP\LatestPOM\reports\ss\validateLoginTestMon_Jul_23_15_00_20_IST_2018.png' /></a>
+---Test case execution End---ending the test -ended
