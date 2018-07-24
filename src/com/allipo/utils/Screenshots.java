@@ -13,7 +13,7 @@ public class Screenshots {
 	
 	public static String takeScreenshot(WebDriver driver, String fileName){
 		fileName = fileName + ".png";
-		String directory = "D:\\QSP\\LatestPOM\\reports\\ss\\";
+		String directory = "reports\\ss\\";
 		File sourceFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(sourceFile, new File(directory + fileName));
