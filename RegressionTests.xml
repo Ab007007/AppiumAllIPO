@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Default suite">
+	<test thread-count="5" verbose="2" name="Default test">
+		<classes>
+			<class name="com.allipo.test.LoginToAllipo" />
+			<class name="com.allipo.test.ValidateFirstIPOInDetail" />
+			<class name="com.allipo.test.ValidateIPOListPageTest" />
+			<class name="com.allipo.test.ValidateListPageTest" />
+		</classes>
+	</test> <!-- Default test -->
+</suite> <!-- Default suite -->

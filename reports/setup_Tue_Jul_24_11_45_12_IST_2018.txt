@@ -1,5 +1,0 @@
----Test case execution started---setup-started
----INFO-----Completeds Executing Test - validateLoginTest
----INFO---inside after method with 1
----INFO---2
----Test case execution End---ending the test -ended
