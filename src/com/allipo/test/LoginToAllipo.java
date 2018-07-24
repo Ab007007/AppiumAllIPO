@@ -12,8 +12,6 @@ public class LoginToAllipo extends DriverUtils {
 	public static void main(String[] args) throws MalformedURLException, InterruptedException {
 		AndroidDriver<AndroidElement> driver = allIPOCaps();
 		
-		Thread.sleep(10000);
-		//waitForElementVisible(driver,driver.findElementById("com.android.packageinstaller:id/permission_allow_button"),120);
 		System.out.println("clicking on next");
 		driver.findElementById("com.appbootup.ipo.news:id/btn_next").click();
 		Thread.sleep(2000);
