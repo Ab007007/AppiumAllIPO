@@ -32,7 +32,8 @@ public class InitialScreenPage {
 	@AndroidFindBy(accessibility="Google Login")
 	WebElement GoogleLogin;
 	
-	@AndroidFindBy(xpath="//android.widget.LinearLayout[@index='0']")
+//	@AndroidFindBy(xpath="//android.widget.LinearLayout[@index='0']")
+	@AndroidFindBy(id="com.google.android.gms:id/account_display_name")
 	WebElement firstGoogleAccount;
 	
 	public void allowAllNotificaiton(){
