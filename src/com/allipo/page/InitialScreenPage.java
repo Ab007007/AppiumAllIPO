@@ -5,7 +5,6 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.Log;
-
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.pagefactory.AndroidFindBy;

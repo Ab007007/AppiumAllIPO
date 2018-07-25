@@ -13,6 +13,7 @@ import org.testng.Assert;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.remote.AndroidMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 
 public class DriverUtils {
@@ -38,12 +39,38 @@ public class DriverUtils {
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		}
 		catch(Exception ex){
-			Log.info("---Failed to create Driver---");
+			Log.info("---Failed to create Driver---\n"
+					+"Possible reason could be appium server is NOT up, please start appium server"
+					+ex.getMessage());
 		}
 		
 			return driver;
 	}
 
+	public static AndroidDriver<AndroidElement> allIPOCapsWithPermission()  {
+
+		AndroidDriver driver = null;
+		// TODO Auto-generated method stub
+		// File app = new File(appName);
+		DesiredCapabilities capabilities = new DesiredCapabilities();
+
+		try{
+			capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Android device");
+			// capabilities.setCapability(MobileCapabilityType.APP,app.getAbsolutePath());
+			capabilities.setCapability(MobileCapabilityType.NEW_COMMAND_TIMEOUT, "50000");
+			capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,"true");
+			capabilities.setCapability("appPackage", "com.appbootup.ipo.news");
+			capabilities.setCapability("appActivity", "com.appbootup.ipo.news.ActivitySplashScreen");
+			// System.out.println(app.getAbsolutePath());
+			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
+		}
+		catch(Exception ex){
+			Log.info("---Failed to create Driver---\n"+ex.getMessage());
+		}
+		
+			return driver;
+	}
 	
 	public static WebElement getVisibleElement(AndroidDriver driver, WebElement ele) {
 		//	System.out.println("Getting element By " + type  + "-" + value);
