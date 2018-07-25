@@ -34,8 +34,8 @@ AndroidDriver<AndroidElement> driver = null;
 		List<AndroidElement> listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
 		Log.info("---Total number of ipo's displayed on screen " + listOfIPOs.size());
 		String title, date, shortnotes;
-		for(int i=1;i<listOfIPOs.size();i++) {
-
+		
+		for(int i=1;i<listOfIPOs.size()-1;i++) {
 			title = null;
 			date = null;
 			shortnotes = null;
@@ -45,12 +45,10 @@ AndroidDriver<AndroidElement> driver = null;
 			date = frameElement.findElementById("com.appbootup.ipo.news:id/date").getText();
 			shortnotes = frameElement.findElementById("com.appbootup.ipo.news:id/short_content").getText();
 			Thread.sleep(2000);
-			driver.findElementByAndroidUIAutomator(
-					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))");
-
-			Log.info("--Title ---" + title);
-			Log.info("---Date---" + date);
-			Log.info("---Short notes ---" + shortnotes);
+			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))");
+			Log.info("--Title of "+i+" ---" + title);
+			Log.info("---Date of "+i+"---" + date);
+			Log.info("---Short notes of "+i+" ---" + shortnotes);
 		}
 
 	}

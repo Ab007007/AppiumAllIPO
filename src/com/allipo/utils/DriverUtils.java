@@ -34,7 +34,7 @@ public class DriverUtils {
 			// "true");
 			capabilities.setCapability("appPackage", "com.appbootup.ipo.news");
 			capabilities.setCapability("appActivity", "com.appbootup.ipo.news.ActivitySplashScreen");
-			// System.out.println(app.getAbsolutePath());
+			// Log.info(app.getAbsolutePath());
 			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		}
@@ -61,7 +61,7 @@ public class DriverUtils {
 			capabilities.setCapability(AndroidMobileCapabilityType.AUTO_GRANT_PERMISSIONS,"true");
 			capabilities.setCapability("appPackage", "com.appbootup.ipo.news");
 			capabilities.setCapability("appActivity", "com.appbootup.ipo.news.ActivitySplashScreen");
-			// System.out.println(app.getAbsolutePath());
+			// Log.info(app.getAbsolutePath());
 			driver = new AndroidDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
 			driver.manage().timeouts().implicitlyWait(120, TimeUnit.SECONDS);
 		}
@@ -73,7 +73,7 @@ public class DriverUtils {
 	}
 	
 	public static WebElement getVisibleElement(AndroidDriver driver, WebElement ele) {
-		//	System.out.println("Getting element By " + type  + "-" + value);
+		//	Log.info("Getting element By " + type  + "-" + value);
 			WebDriverWait wait = null;
 			try{
 				wait = new WebDriverWait(driver, 120);
@@ -87,18 +87,18 @@ public class DriverUtils {
 		}
 	
 	public static void waitForElementVisibleAndClick(AndroidDriver driver, AndroidElement locator, int seconds) {
-		System.out.println("--- waiting for element to be visible for " + seconds + " seconds");
+		Log.info("--- waiting for element to be visible for " + seconds + " seconds");
 
 		WebDriverWait wait = new WebDriverWait(driver, seconds);
 		wait.until(ExpectedConditions.visibilityOf(locator));
-		System.out.println("Clicking on element");
+		Log.info("Clicking on element");
 		locator.click();
 	}
 
 	public static void verifyIPOListPage(AndroidDriver<AndroidElement> driver) throws InterruptedException {
-		System.out.println("--- Validating the details Page ---");
+		Log.info("--- Validating the details Page ---");
 		List<AndroidElement> listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
-		System.out.println("---Total number of ipo's displayed on screen " + listOfIPOs.size());
+		Log.info("---Total number of ipo's displayed on screen " + listOfIPOs.size());
 		String title, date, shortnotes;
 		for(int i=1;i<listOfIPOs.size();i++) {
 
@@ -114,7 +114,7 @@ public class DriverUtils {
 			driver.findElementByAndroidUIAutomator(
 					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))");
 
-			System.out.println(title + date + shortnotes);
+			Log.info( title + date + shortnotes);
 			i++;
 		}
 
@@ -127,7 +127,7 @@ public class DriverUtils {
 			driver.findElement(MobileBy.xpath("//*[@class='android.widget.Button'][2]")).click();
 			Thread.sleep(1000);
 		}
-		System.out.println("ended");
+		Log.info("ended");
 	}
 	
 	

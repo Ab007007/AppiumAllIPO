@@ -93,24 +93,21 @@ public class Log {
 	// Need to create these methods, so that they can be called  
 	public static void pass(String message) {
 		loggerObj.info(message);
-		System.out.println(message);
 		test.log(LogStatus.PASS, message);
-		writeToText("---PASS---"+ message);
+		writeToText("---PASS : "+ message);
 	}
 	public static void fail(String message) {
 		loggerObj.info(message);
-		System.out.println(message);
 		test.log(LogStatus.FAIL, message);
-		writeToText("---FAIL---"+message);
+		writeToText("---FAIL : "+message);
 		writeToText("Refer HTML Screen shot for the latest failed screen");
 		Assert.fail("Test Failed");
 	}
 	public static void info(String message) {
 
 		loggerObj.info(message);
-		System.out.println(message);
 		test.log(LogStatus.INFO, message);
-		writeToText("---INFO---" + message);
+		writeToText("INFO : " + message);
 	}
 
 	public static void warn(String message) {
@@ -118,31 +115,28 @@ public class Log {
 		loggerObj.warn(message);
 		System.out.println(message);
 		test.log(LogStatus.WARNING, message);
-		writeToText("---WARNING---" + message);
+		writeToText("WARNING : " + message);
 	}
 
 	public static void error(String message) {
 
 		loggerObj.error(message);
-		System.out.println(message);
 		test.log(LogStatus.ERROR, message);
-		writeToText("---ERROR---" + message);
+		writeToText("ERROR : " + message);
 	}
 
 	public static void fatal(String message) {
 
 		loggerObj.fatal(message);
-		System.out.println(message);
 		test.log(LogStatus.FATAL, message);
-		writeToText("---FATAL---" + message);
+		writeToText("FATAL : " + message);
 	}
 
 	public static void debug(String message) {
 
 		loggerObj.debug(message);
-		System.out.println(message);
 		test.log(LogStatus.UNKNOWN, message);
-		writeToText("---UNKNOWN---" + message);
+		writeToText("UNKNOWN : " + message);
 	}
 
 	public static void writeToText(String content){

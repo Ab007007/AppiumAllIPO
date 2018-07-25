@@ -34,7 +34,7 @@ public class ExtentReportFactory {
 		Date date = new Date();
 		String date1 = date.toString().replaceAll(" ", "_").replaceAll(":", "_");
 		// display time and date using toString()
-		System.out.println(date1);
+		//System.out.println(date1);
 
 		return date1;
 	}

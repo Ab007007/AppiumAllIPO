@@ -1,8 +1,10 @@
 package com.allipo.test;
 import java.io.IOException;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.allipo.page.AllIPOHomePage;
@@ -20,7 +22,7 @@ AndroidDriver driver = null;
 	InitialScreenPage iSp = null;
 	AllIPOHomePage ipo = null;
 		
-	@BeforeClass
+	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
  		Log.startReport("setup");
@@ -32,7 +34,7 @@ AndroidDriver driver = null;
 		
  	}
 	@Test(groups={"smoke"})
-	public void validateLoginTest() throws InterruptedException{
+	public void validateIPOListPage() throws InterruptedException{
 		//Test Logic
 		Log.info("---Running IPO list page test---");
 		iSp.clickOnNextButton();
@@ -54,9 +56,8 @@ AndroidDriver driver = null;
 			Log.ssPath.add(path);
 			Log.attachScreenShot(path);
 		}
-		
 		Log.endReport();
+		
+		driver.closeApp();
 	}
-	
-
 }

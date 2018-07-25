@@ -2,7 +2,7 @@ package com.allipo.test;
 import java.io.IOException;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.allipo.page.AllIPOHomePage;
@@ -22,19 +22,19 @@ public class ValidateFirstIPOInDetail extends DriverUtils {
 	AllIPOHomePage ipo = null;
 	IPODetailPage ipoDetails = null;
 	
-	@BeforeClass
+	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
  		Log.startReport("setup");
  		driver = allIPOCapsWithPermission();
-		//Create Page Objects
  		
+ 		Log.info("Creating Page Objects");
 		iSp = new InitialScreenPage(driver);
 		ipo = new AllIPOHomePage(driver);
 		ipoDetails = new IPODetailPage(driver);
  	}
 	@Test(groups={"smoke"})
-	public void validateLoginTest() throws InterruptedException{
+	public void validateIPODetailPage() throws InterruptedException{
 		//Test Logic
 		Log.info("---Running First IPO detail page test---");
 		iSp.clickOnNextButton();
@@ -44,6 +44,7 @@ public class ValidateFirstIPOInDetail extends DriverUtils {
 		Thread.sleep(15000);
  		ipo.validateHomeScreen();
  		ipo.selectFirstIPO();
+ 		Thread.sleep(40000);
  		ipoDetails.validateIPODetails();
  		
 	}
@@ -60,7 +61,9 @@ public class ValidateFirstIPOInDetail extends DriverUtils {
 		}
 		
 		Log.endReport();
+		driver.closeApp();
 	}
+	
 	
 
 }

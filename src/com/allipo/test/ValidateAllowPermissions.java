@@ -12,6 +12,7 @@ import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.allipo.page.AllIPOHomePage;
@@ -34,7 +35,7 @@ public class ValidateAllowPermissions extends DriverUtils {
 	AllIPOHomePage ipo = null;
 	IPODetailPage ipoDetails = null;
 	
-	@BeforeClass
+	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
  		Log.startReport("setup");
@@ -67,7 +68,6 @@ public class ValidateAllowPermissions extends DriverUtils {
 		}
 		
 		Log.endReport();
+		driver.closeApp();
 	}
-	
-
 }

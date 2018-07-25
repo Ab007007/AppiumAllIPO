@@ -193,6 +193,5 @@ public class IPODetailPage {
 	
 	public void printLog(String message){
 		Log.info("[INFO] - " + message);
-		System.out.println("[INFO] - " + message);
 	}
 }
