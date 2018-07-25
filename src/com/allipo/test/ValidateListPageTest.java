@@ -17,7 +17,7 @@ import com.allipo.utils.Screenshots;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
 
-public class ValidateListPageTest {
+public class ValidateListPageTest extends DriverUtils {
 
 	AndroidDriver driver = null;
 	
@@ -25,7 +25,7 @@ public class ValidateListPageTest {
  	public void preConfig(){
  		Log.configureReport();
  		Log.startReport("setup");
- 		//driver = DriverUtils.getWebDriver();
+ 		driver = allIPOCapsWithPermission();
 		//Create Page Objects
 		
  	}
