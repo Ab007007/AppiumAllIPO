@@ -15,7 +15,7 @@ import com.allipo.utils.Screenshots;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class ValidateFirstIPOInDetail extends DriverUtils {
+public class ValidateIPODetailPage extends DriverUtils {
 
 	AndroidDriver driver = null;
 	InitialScreenPage iSp = null;
