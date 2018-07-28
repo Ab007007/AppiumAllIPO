@@ -46,9 +46,8 @@ public class ValidateAllowPermissions extends DriverUtils {
 		ipo = new AllIPOHomePage(driver);
 		ipoDetails = new IPODetailPage(driver);
  	}
-	@Test(groups={"smoke"})
+	@Test(groups={"IPO"})
 	public void validateLoginPermissionTest() throws InterruptedException{
-		//Test Logic
 		Log.info("---Running Allow Permissions test---");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();

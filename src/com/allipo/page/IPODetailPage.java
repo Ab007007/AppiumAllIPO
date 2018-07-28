@@ -1,11 +1,15 @@
 package com.allipo.page;
 
+import static org.testng.Assert.assertTrue;
+
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
-
+import org.testng.Assert;
+import org.testng.asserts.*;
 import com.allipo.utils.Log;
+import com.allipo.utils.ScrollScreen;
 
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
@@ -82,6 +86,43 @@ public class IPODetailPage {
 		validateTableValues("com.appbootup.ipo.news:id/niiDetailSubscription");
 		validateCompanyFinancials();
 		
+	}
+	
+	public void validateIPODetailDownloadDoc(AndroidElement downlaodImg) throws InterruptedException{
+	
+			Log.info(downlaodImg.toString());
+		
+			downlaodImg.click();
+			Assert.assertFalse(driver.findElementsByXPath("//android.widget.TextView[contains(@text,'Check later')]").size()>0,"Downloading-Check-later message is displayed, document is not downlaoded");
+			
+			int count=0;
+			while(driver.findElementsById("com.appbootup.ipo.news:id/snackProgressBar_txt_message").size()>0)
+			{
+				Log.info("Downlaoding and waiting for "+ count+" sec"+ downlaodImg.toString() +"dcoument");
+				Thread.sleep(1000);
+				count++;
+				if(count==120)
+				{
+					Assert.assertTrue(false,"Download not complete after 120 sec");
+					break;
+				}
+			}
+			
+			count=0;
+			while(driver.findElementsByXPath("//android.widget.TextView[contains(@resource-id,'com.appbootup.ipo.news:id/snackbar_text') and contains(@text,'Download Completed')]").size()>0)
+			 {
+				 Log.info("Waiting for Download Completed message to dissappear");
+				 Thread.sleep(1000);
+				 count++;
+				 if(count==120)
+					{
+						Assert.assertTrue(false,"Download  complete message is not disappearing even after 120 sec");
+						break;
+					}
+			 }
+			 
+//			Assert.assertTrue(driver.findElementsByXPath("//android.widget.TextView[contains(@text,'"+Text_Msg+"')]").size()==0);
+//			Assert.assertTrue(driver.findElementsByXPath("//android.widget.TextView[contains(@resource-id,'com.appbootup.ipo.news:id/snackbar_text') and contains(@text,'Download Completed')]").size()==0);
 	}
 	
 	public void validateHeaderDetails(){

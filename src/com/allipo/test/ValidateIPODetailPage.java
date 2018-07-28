@@ -33,10 +33,10 @@ public class ValidateIPODetailPage extends DriverUtils {
 		ipo = new AllIPOHomePage(driver);
 		ipoDetails = new IPODetailPage(driver);
  	}
-	@Test(groups={"smoke"})
+	@Test(groups={"IPO"})
 	public void validateIPODetailPage() throws InterruptedException{
 		//Test Logic
-		Log.info("---Running First IPO detail page test---");
+		Log.info("---Running IPO detail page test---");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
@@ -46,7 +46,6 @@ public class ValidateIPODetailPage extends DriverUtils {
  		ipo.selectFirstIPO();
  		Thread.sleep(40000);
  		ipoDetails.validateIPODetails();
- 		
 	}
 	
 	@AfterMethod
