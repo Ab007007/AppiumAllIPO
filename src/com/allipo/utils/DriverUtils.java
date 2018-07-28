@@ -96,9 +96,9 @@ public class DriverUtils {
 	}
 
 	public static void verifyIPOListPage(AndroidDriver<AndroidElement> driver) throws InterruptedException {
-		Log.info("--- Validating the details Page ---");
+		Log.info("Validating the details Page.");
 		List<AndroidElement> listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
-		Log.info("---Total number of ipo's displayed on screen " + listOfIPOs.size());
+		Log.info("Total number of ipo's displayed on screen " + listOfIPOs.size());
 		String title, date, shortnotes;
 		for(int i=1;i<listOfIPOs.size();i++) {
 
@@ -132,7 +132,7 @@ public class DriverUtils {
 	
 	
 	public static void validateHomePage(AndroidDriver driver){
-		Log.info("--- Validating Home Page---");
+		Log.info("Validating Home Page.");
 		if(driver.findElementByXPath("//android.widget.TextView[@text='ALL IPO News']").getText().equals("ALL IPO News")){
 			Assert.assertTrue(true, "Validate Home Page Test Passed ");
 			Log.pass("Test Passed With Home Screen Validation");

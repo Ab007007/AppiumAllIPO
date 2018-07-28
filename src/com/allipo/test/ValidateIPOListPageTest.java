@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.allipo.page.AllIPOHomePage;
 import com.allipo.page.InitialScreenPage;
+import com.allipo.utils.AfterMethodUtils;
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.ExtentReportFactory;
 import com.allipo.utils.Log;
@@ -33,10 +34,10 @@ AndroidDriver driver = null;
 		ipo = new AllIPOHomePage(driver);
 		
  	}
-	@Test(groups={"smoke"})
+	@Test(groups={"smoke"},testName="IPO List Page")
 	public void validateIPOListPage() throws InterruptedException{
 		//Test Logic
-		Log.info("---Running IPO list page test---");
+		Log.info("Running IPO list page test.");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
@@ -48,16 +49,8 @@ AndroidDriver driver = null;
 	
 	@AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {
-		Log.info("inside after method with " +testResult.getStatus());
-		Log.info(String.valueOf(ITestResult.FAILURE));
-		if (testResult.getStatus() == ITestResult.FAILURE) {
-			String path = Screenshots.takeScreenshot(driver, testResult.getName()+ExtentReportFactory.getCurrentDateAndTime());
-			Log.info("Path " + path);
-			Log.ssPath.add(path);
-			Log.attachScreenShot(path);
-		}
+		AfterMethodUtils.afterMethod(testResult, driver);
 		Log.endReport();
-		
 		driver.closeApp();
 	}
 }

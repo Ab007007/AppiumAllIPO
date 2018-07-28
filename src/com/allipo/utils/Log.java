@@ -51,7 +51,7 @@ public class Log {
 	}
 	public static void endReport(){
 		
-		endTestCase("ending the test -ended");
+		endTestCase("Ending  test execution");
 		reports.endTest(test);
 		reports.flush();
 		try {

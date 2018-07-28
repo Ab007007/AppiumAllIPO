@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.Log;
@@ -31,36 +32,44 @@ AndroidDriver<AndroidElement> driver = null;
 	}
 	
 	public  void verifyIPOListPage() throws InterruptedException {
-		Log.info("--- Validating the details Page ---");
+		Log.info("Validating the details Page");
 		List<AndroidElement> listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
-		Log.info("---Total number of ipo's displayed on screen " + listOfIPOs.size());
+		Log.info("Total number of ipo's displayed on screen " + listOfIPOs.size());
 		String title, date, shortnotes;
 		
-		for(int i=1;i<listOfIPOs.size();i++) {
+		for(int i=1;i<=6;i++) {
 			title = null;
 			date = null;
 			shortnotes = null;
-			if(i==4)
-			{
+			if(driver.findElementsByXPath("//android.widget.FrameLayout[@index='" + i + "']").size()==0)
 				ScrollScreen.scrollScreenUp(driver);
-			}
 			AndroidElement frameElement = driver.findElementByXPath("//android.widget.FrameLayout[@index='" + i + "']");
 
+			if(frameElement.findElementsById("com.appbootup.ipo.news:id/ipo_title").size()==0)
+				ScrollScreen.scrollScreenUp(driver);
 			title = frameElement.findElementById("com.appbootup.ipo.news:id/ipo_title").getText();
+			Assert.assertTrue(title.length()>1,"Title is not present");
+			
+			if(frameElement.findElementsById("com.appbootup.ipo.news:id/date").size()==0)
+				ScrollScreen.scrollScreenUp(driver);
 			date = frameElement.findElementById("com.appbootup.ipo.news:id/date").getText();
+			Assert.assertTrue(date.length()>1,"Title is not present");
+			
+			if(frameElement.findElementsById("com.appbootup.ipo.news:id/short_content").size()==0)
+				ScrollScreen.scrollScreenUp(driver);
 			shortnotes = frameElement.findElementById("com.appbootup.ipo.news:id/short_content").getText();
-			Thread.sleep(2000);
-//			driver.findElementByAndroidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))");
-			Log.info("--Title of "+i+" ---" + title);
-			Log.info("---Date of "+i+"---" + date);
-			Log.info("---Short notes of "+i+" ---" + shortnotes);
+			Assert.assertTrue(shortnotes.length()>1,"Title is not present");
+			
+			Log.info("Title of "+i+" -" + title);
+			Log.info("Date of "+i+"-" + date);
+			Log.info("Short notes of "+i+"-" + shortnotes);
 		}
 
 	}
 	
 	
 	public  void selectFirstIPO() throws InterruptedException {
-		Log.info("--- Selecting First IPO in the Home Page ---");
+		Log.info("Selecting First IPO in the Home Page.");
 		String title, date, shortnotes;
 		
 			title = null;
@@ -75,9 +84,9 @@ AndroidDriver<AndroidElement> driver = null;
 			driver.findElementByAndroidUIAutomator(
 					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))").click();;
 
-			Log.info("--Title ---" + title);
-			Log.info("---Date---" + date);
-			Log.info("---Short notes ---" + shortnotes);
+			Log.info("Title ---" + title);
+			Log.info("Date---" + date);
+			Log.info("Short notes ---" + shortnotes);
 		
 
 	}

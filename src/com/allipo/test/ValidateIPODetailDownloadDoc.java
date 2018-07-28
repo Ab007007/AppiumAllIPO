@@ -13,6 +13,7 @@ import org.testng.annotations.Test;
 import com.allipo.page.AllIPOHomePage;
 import com.allipo.page.IPODetailPage;
 import com.allipo.page.InitialScreenPage;
+import com.allipo.utils.AfterMethodUtils;
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.ExtentReportFactory;
 import com.allipo.utils.Log;
@@ -45,7 +46,7 @@ public class ValidateIPODetailDownloadDoc extends DriverUtils {
 	@DataProvider(name="DownloadDocDataProvider")
 	public  Object[][] downDocDataProvider() throws InterruptedException
 	{	
-		Log.info("---Running Download report in IPO details test---");
+		Log.info("Running Download report in IPO details test");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
@@ -72,7 +73,7 @@ public class ValidateIPODetailDownloadDoc extends DriverUtils {
 		return downlaodImg;
 	}
 	
-	@Test(groups={"IPO"},dataProvider="DownloadDocDataProvider")
+	@Test(groups={"IPO"},dataProvider="DownloadDocDataProvider",testName="DownloadDocInIPODetailPage")
 	public void validateDownloadDocInIPODetailPage(AndroidElement downlaodImg) throws InterruptedException
 	{
  		ipoDetails.validateIPODetailDownloadDoc(downlaodImg);
@@ -81,15 +82,7 @@ public class ValidateIPODetailDownloadDoc extends DriverUtils {
 	
 	@AfterMethod
 	public void repostGen(ITestResult testResult) throws IOException {
-		
-		Log.info("inside after method with " +testResult.getStatus());
-		Log.info(String.valueOf(ITestResult.FAILURE));
-			if (testResult.getStatus() == ITestResult.FAILURE) {
-				String path = Screenshots.takeScreenshot(driver, testResult.getName()+ExtentReportFactory.getCurrentDateAndTime());
-				Log.info("Path " + path);
-				Log.ssPath.add(path);
-				Log.attachScreenShot(path);
-			}
+		AfterMethodUtils.afterMethod(testResult, driver);
 		}
 		
 		@AfterClass

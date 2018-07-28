@@ -75,14 +75,14 @@ public class InitialScreenPage {
 	}
 	
 	public void selectFirstAccount(){
-		Log.info("--- Selecting First Google Account ---");
+		Log.info("Selecting First Google Account.");
 			DriverUtils.getVisibleElement(driver,firstGoogleAccount);
 			firstGoogleAccount.click();
 		Log.info("Click  successfull on First Google account---");
 	}
 	
 	public void selectSMETab(){
-		Log.info("--- Selecting SME Tab ---");
+		Log.info("Selecting SME Tab.");
 //			DriverUtils.getVisibleElement(driver,SMETab);
 //			SMETab.click();
 		MobileElement sme = (MobileElement)driver.findElementByAndroidUIAutomator("new UiSelector().text(\"SME\")");

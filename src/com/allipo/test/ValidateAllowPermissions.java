@@ -18,6 +18,7 @@ import org.testng.annotations.Test;
 import com.allipo.page.AllIPOHomePage;
 import com.allipo.page.IPODetailPage;
 import com.allipo.page.InitialScreenPage;
+import com.allipo.utils.AfterMethodUtils;
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.ExtentReportFactory;
 import com.allipo.utils.Log;
@@ -46,9 +47,9 @@ public class ValidateAllowPermissions extends DriverUtils {
 		ipo = new AllIPOHomePage(driver);
 		ipoDetails = new IPODetailPage(driver);
  	}
-	@Test(groups={"IPO"})
+	@Test(groups={"IPO"},testName="Allow Permission Test")
 	public void validateLoginPermissionTest() throws InterruptedException{
-		Log.info("---Running Allow Permissions test---");
+		Log.info("Running Allow Permissions test");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		Thread.sleep(5000);
@@ -57,15 +58,7 @@ public class ValidateAllowPermissions extends DriverUtils {
 	
 	@AfterMethod
 	public void tearDown(ITestResult testResult) throws IOException {
-		Log.info("inside after method with " +testResult.getStatus());
-		Log.info(String.valueOf(ITestResult.FAILURE));
-		if (testResult.getStatus() == ITestResult.FAILURE) {
-			String path = Screenshots.takeScreenshot(driver, testResult.getName()+ExtentReportFactory.getCurrentDateAndTime());
-			Log.info("Path " + path);
-			Log.ssPath.add(path);
-			Log.attachScreenShot(path);
-		}
-		
+		AfterMethodUtils.afterMethod(testResult, driver);
 		Log.endReport();
 		driver.closeApp();
 	}
