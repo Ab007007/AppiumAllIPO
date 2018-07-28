@@ -15,7 +15,6 @@ import com.allipo.page.IPODetailPage;
 import com.allipo.page.InitialScreenPage;
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.ExtentReportFactory;
-import com.allipo.utils.FileSystem;
 import com.allipo.utils.Log;
 import com.allipo.utils.Screenshots;
 import com.allipo.utils.ScrollScreen;
