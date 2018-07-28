@@ -4,7 +4,7 @@
 	<test thread-count="5" verbose="2" name="Default test">
 		<classes>
 			<class name="com.allipo.test.ValidateAllowPermissions"/>
-			<class name="com.allipo.test.ValidateFirstIPOInDetail"/>
+			<class name="com.allipo.test.ValidateIPODetailPage"/>
 			<class name="com.allipo.test.ValidateIPOListPageTest"/>
 			<class name="com.allipo.test.ValidateIPODetailDownloadDoc"/>
 		</classes>
