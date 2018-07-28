@@ -6,6 +6,7 @@
 			<class name="com.allipo.test.ValidateAllowPermissions"/>
 			<class name="com.allipo.test.ValidateFirstIPOInDetail"/>
 			<class name="com.allipo.test.ValidateIPOListPageTest"/>
+			<class name="com.allipo.test.ValidateIPODetailDownloadDoc"/>
 		</classes>
 	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
