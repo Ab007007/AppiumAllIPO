@@ -39,4 +39,10 @@ public class ScrollScreen {
 		TouchAction ts = new TouchAction(driver);
 		ts.longPress(startx, starty).moveTo(startx, endy).release().perform();
 	}
+	
+	public static double getScreenHeight(AndroidDriver driver )
+	{
+		Dimension size = driver.manage().window().getSize();
+		return size.height;
+	}
 }

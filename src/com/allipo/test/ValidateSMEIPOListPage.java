@@ -17,7 +17,7 @@ import com.allipo.utils.Screenshots;
 
 import io.appium.java_client.android.AndroidDriver;
 
-public class ValidateSMEIPOListPageTest extends DriverUtils {
+public class ValidateSMEIPOListPage extends DriverUtils {
 
 AndroidDriver driver = null;
 	InitialScreenPage iSp = null;

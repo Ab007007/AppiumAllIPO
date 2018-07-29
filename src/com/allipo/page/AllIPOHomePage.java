@@ -105,5 +105,32 @@ AndroidDriver<AndroidElement> driver = null;
 
 	}
 	
+	public  void selectFirstSMEIPO() throws InterruptedException {
+		Log.info("Selecting First SME IPO in the Home Page.");
+		Thread.sleep(3000);
+
+		
+		String title, date, shortnotes;
+		
+			title = null;
+			date = null;
+			shortnotes = null;
+			AndroidElement frameElement = driver.findElementByXPath("//android.widget.FrameLayout[@index='1']");
+
+			title = frameElement.findElementById("com.appbootup.ipo.news:id/ipo_title").getText();
+			date = frameElement.findElementById("com.appbootup.ipo.news:id/date").getText();
+			shortnotes = frameElement.findElementById("com.appbootup.ipo.news:id/short_content").getText();
+			Thread.sleep(2000);
+//			driver.findElementByAndroidUIAutomator(
+//					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))").click();;
+			driver.findElementByXPath("//android.widget.FrameLayout[@index='1']").click();
+
+			Log.info("Title-" + title);
+			Log.info("Date-" + date);
+			Log.info("Short notes-" + shortnotes);
+		
+
+	}
+	
 
 }
