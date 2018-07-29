@@ -7,7 +7,8 @@
 			<class name="com.allipo.test.ValidateIPODetailPage"/>
 			<class name="com.allipo.test.ValidateIPOListPageTest"/>
 			<class name="com.allipo.test.ValidateIPODetailDownloadDoc"/>
-			<class name="com.allipo.test.ValidateSMEIPOListPageTest"/>
+			<class name="com.allipo.test.ValidateSMEIPOListPage"/>
+			<class name="com.allipo.test.ValidateSMEIPODetailPage"/>
 		</classes>
 	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
