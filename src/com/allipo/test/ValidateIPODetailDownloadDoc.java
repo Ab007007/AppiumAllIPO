@@ -51,7 +51,6 @@ public class ValidateIPODetailDownloadDoc extends DriverUtils {
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
 		iSp.selectFirstAccount();
-		Thread.sleep(15000);
 		ipo.validateHomeScreen();
 		ipo.selectFirstIPO();
 		Thread.sleep(40000);

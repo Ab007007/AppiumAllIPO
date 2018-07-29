@@ -18,6 +18,16 @@ public class ScrollScreen {
 		ts.longPress(startx, starty).moveTo(startx, endy).release().perform();
 	}
 	
+	public static void scrollScreenUp(AndroidDriver driver,double from,double to )
+	{
+		Dimension size = driver.manage().window().getSize();
+		int starty=(int)(size.height*from);
+		int endy=(int)(size.height*to);
+		int startx=size.width/2;
+		Log.info("Start y :"+starty +" endy : "+endy +" startx :"+startx);
+		TouchAction ts = new TouchAction(driver);
+		ts.longPress(startx, starty).moveTo(startx, endy).release().perform();
+	}
 	
 	public static void scrollScreenDown(AndroidDriver driver )
 	{

@@ -25,19 +25,35 @@ AndroidDriver<AndroidElement> driver = null;
 		// TODO Auto-generated constructor stub
 	}
 
-	public void validateHomeScreen(){
-		Log.info("---Validating Home Screen ---");
+	public void validateHomeScreen() throws InterruptedException{
+		Thread.sleep(10000);
+		Log.info("Validating Home Screen.");
 		DriverUtils.validateHomePage(driver);
 		
 	}
 	
-	public  void verifyIPOListPage() throws InterruptedException {
+	public  void verifyIPOListPage(String IPOType) throws InterruptedException {
 		Log.info("Validating the details Page");
-		List<AndroidElement> listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
+		List<AndroidElement> listOfIPOs ;
+		int noOfScrolls=3;
+		
+		if(IPOType=="SME")
+			noOfScrolls=5;
+		
+		for(int i=0;i<noOfScrolls;i++)
+		{
+			listOfIPOs = driver.findElementsById("com.appbootup.ipo.news:id/ipo_title");
+			verifyIPOListPageContent(listOfIPOs);
+			ScrollScreen.scrollScreenUp(driver);
+			listOfIPOs.clear();
+		}
+	}
+	
+	public  void verifyIPOListPageContent(List<AndroidElement> listOfIPOs) throws InterruptedException {
 		Log.info("Total number of ipo's displayed on screen " + listOfIPOs.size());
 		String title, date, shortnotes;
 		
-		for(int i=1;i<=6;i++) {
+		for(int i=1;i<listOfIPOs.size();i++) {
 			title = null;
 			date = null;
 			shortnotes = null;
@@ -64,9 +80,7 @@ AndroidDriver<AndroidElement> driver = null;
 			Log.info("Date of "+i+"-" + date);
 			Log.info("Short notes of "+i+"-" + shortnotes);
 		}
-
 	}
-	
 	
 	public  void selectFirstIPO() throws InterruptedException {
 		Log.info("Selecting First IPO in the Home Page.");
@@ -84,9 +98,9 @@ AndroidDriver<AndroidElement> driver = null;
 			driver.findElementByAndroidUIAutomator(
 					"new UiScrollable(new UiSelector()).scrollIntoView(text(\"" + title + "\"))").click();;
 
-			Log.info("Title ---" + title);
-			Log.info("Date---" + date);
-			Log.info("Short notes ---" + shortnotes);
+			Log.info("Title-" + title);
+			Log.info("Date-" + date);
+			Log.info("Short notes-" + shortnotes);
 		
 
 	}

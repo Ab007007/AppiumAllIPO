@@ -39,6 +39,8 @@ public class InitialScreenPage {
 	@AndroidFindBy(id="com.google.android.gms:id/account_display_name")
 	WebElement firstGoogleAccount;
 	
+	public static final String catLoadingMask="com.appbootup.ipo.news:id/eye_right";
+	public static final String SMETab="//android.widget.TextView[contains(@text,'SME')]";
 	
 	public void allowAllNotificaiton(){
 		Log.info("Allowing all notifications");
@@ -74,17 +76,24 @@ public class InitialScreenPage {
 		Log.info("Click successfull on gogle login");
 	}
 	
-	public void selectFirstAccount(){
+	public void selectFirstAccount() throws InterruptedException{
 		Log.info("Selecting First Google Account.");
 			DriverUtils.getVisibleElement(driver,firstGoogleAccount);
 			firstGoogleAccount.click();
-		Log.info("Click  successfull on First Google account---");
+		Log.info("Click  successfull on First Google account");
+		Log.info("Waiting for Loading mask to disappear");
+		Thread.sleep(2000);
+		while(driver.findElementsById(catLoadingMask).size()>0)
+		{
+			Log.info("Waiting for Loading mask to disappear");
+			Thread.sleep(1000);
+		}
 	}
 	
-	public void selectSMETab(){
+	public void selectSMETab() throws InterruptedException{
 		Log.info("Selecting SME Tab.");
-//			DriverUtils.getVisibleElement(driver,SMETab);
-//			SMETab.click();
+		while(driver.findElementsByXPath(SMETab).size()==0)
+			Thread.sleep(1000);
 		MobileElement sme = (MobileElement)driver.findElementByAndroidUIAutomator("new UiSelector().text(\"SME\")");
 		sme.click();
 		Log.info("SME Tab Click successfull");

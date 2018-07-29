@@ -36,16 +36,16 @@ public class ValidateIPODetailPage extends DriverUtils {
  	}
 	@Test(groups={"IPO"},testName="IPO Detail Page")
 	public void validateIPODetailPage() throws InterruptedException{
-		//Test Logic
+		
 		Log.info("Running IPO detail page test.");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
 		iSp.selectFirstAccount();
-		Thread.sleep(15000);
  		ipo.validateHomeScreen();
  		ipo.selectFirstIPO();
- 		Thread.sleep(40000);
+ 		Log.info("Waiting for IPO detail page values to load");
+ 		Thread.sleep(60000);
  		ipoDetails.validateIPODetails();
 	}
 	

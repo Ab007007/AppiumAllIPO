@@ -75,7 +75,7 @@ public class IPODetailPage {
 	}
 	
 	
-	public void validateIPODetails(){
+	public void validateIPODetails() throws InterruptedException{
 		validateHeaderDetails();
 		validatePrice();
 		validateBidsAndAllotments();
@@ -125,7 +125,7 @@ public class IPODetailPage {
 //			Assert.assertTrue(driver.findElementsByXPath("//android.widget.TextView[contains(@resource-id,'com.appbootup.ipo.news:id/snackbar_text') and contains(@text,'Download Completed')]").size()==0);
 	}
 	
-	public void validateHeaderDetails(){
+	public void validateHeaderDetails() throws InterruptedException{
 		printLog(driver.findElementById("com.appbootup.ipo.news:id/ipo_title").getText());
 		printLog(driver.findElementById("com.appbootup.ipo.news:id/exchangeTime").getText());
 		printLog(driver.findElementById("com.appbootup.ipo.news:id/issueSize").getText());
@@ -225,12 +225,9 @@ public class IPODetailPage {
 			for (MobileElement mobileElement2 : values) {
 				
 				printLog("Table Values-"  + mobileElement2.getText());
-			}
-			
-		}
-		
+			}	
+		}	
 	}
-	
 	
 	public void printLog(String message){
 		Log.info("[INFO] - " + message);

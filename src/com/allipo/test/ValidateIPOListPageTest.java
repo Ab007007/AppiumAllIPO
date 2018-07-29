@@ -36,15 +36,13 @@ AndroidDriver driver = null;
  	}
 	@Test(groups={"smoke"},testName="IPO List Page")
 	public void validateIPOListPage() throws InterruptedException{
-		//Test Logic
 		Log.info("Running IPO list page test.");
 		iSp.clickOnNextButton();
 		iSp.clickOnNextButton();
 		iSp.clickOnGoogleLogin();
 		iSp.selectFirstAccount();
-		Thread.sleep(15000);
  		ipo.validateHomeScreen();
- 		ipo.verifyIPOListPage();
+ 		ipo.verifyIPOListPage("IPO");
 	}
 	
 	@AfterMethod
