@@ -3,6 +3,7 @@ package com.allipo.page;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
 
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.Log;
@@ -10,6 +11,7 @@ import com.allipo.utils.Log;
 import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.android.AndroidElement;
+import io.appium.java_client.android.AndroidKeyCode;
 import io.appium.java_client.pagefactory.AndroidFindBy;
 import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 
@@ -39,8 +41,12 @@ public class InitialScreenPage {
 	@AndroidFindBy(id="com.google.android.gms:id/account_display_name")
 	WebElement firstGoogleAccount;
 	
+	@AndroidFindBy(xpath="//android.widget.ImageButton[@content-desc='Open Navigation']")
+	WebElement openNavigation;
+	
 	public static final String catLoadingMask="com.appbootup.ipo.news:id/eye_right";
 	public static final String SMETab="//android.widget.TextView[contains(@text,'SME')]";
+	public static final String Navigation="//android.view.View[@content-desc='Open Navigation']";
 	
 	public void allowAllNotificaiton(){
 		Log.info("Allowing all notifications");
@@ -99,5 +105,8 @@ public class InitialScreenPage {
 		Log.info("SME Tab Click successfull");
 	}
 	
+	public  void selectNavigation() throws InterruptedException{
+		openNavigation.click();
+	}
 	
 }
