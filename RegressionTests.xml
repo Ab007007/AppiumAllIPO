@@ -9,6 +9,7 @@
 			<class name="com.allipo.test.ValidateIPODetailDownloadDoc"/>
 			<class name="com.allipo.test.ValidateSMEIPOListPage"/>
 			<class name="com.allipo.test.ValidateSMEIPODetailPage"/>
+			<class name="com.allipo.test.ValidateNavigation"/>
 		</classes>
 	</test> <!-- Default test -->
 </suite> <!-- Default suite -->
