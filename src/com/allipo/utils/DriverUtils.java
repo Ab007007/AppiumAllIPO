@@ -135,7 +135,7 @@ public class DriverUtils {
 		Log.info("Validating Home Page.");
 		if(driver.findElementByXPath("//android.widget.TextView[@text='ALL IPO News']").getText().equals("ALL IPO News")){
 			Assert.assertTrue(true, "Validate Home Page Test Passed ");
-			Log.pass("Test Passed With Home Screen Validation");
+			Log.pass("Home Screen Validation successful");
 		}else
 		{
 			Log.fail("Home Screen not displayed " );
