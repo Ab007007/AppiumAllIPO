@@ -26,7 +26,7 @@ AndroidDriver driver = null;
 	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("validateIPOListPage");
  		driver = allIPOCapsWithPermission();
 		//Create Page Objects
  		

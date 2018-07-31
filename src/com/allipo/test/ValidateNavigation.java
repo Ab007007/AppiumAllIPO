@@ -25,7 +25,7 @@ public class ValidateNavigation {
 	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("validateNavigationPage");
  		driver = DriverUtils.allIPOCapsWithPermission();
 		//Create Page Objects
  		

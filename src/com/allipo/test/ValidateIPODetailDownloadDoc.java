@@ -33,7 +33,7 @@ public class ValidateIPODetailDownloadDoc extends DriverUtils {
 	@BeforeClass
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("downDocDataProvider");
  		driver = allIPOCapsWithPermission();
  		
  		Log.info("Creating Page Objects");

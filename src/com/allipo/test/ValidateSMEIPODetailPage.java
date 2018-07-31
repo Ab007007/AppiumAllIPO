@@ -27,7 +27,7 @@ public class ValidateSMEIPODetailPage extends DriverUtils {
 	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("validateSMEIPODetailPageTest");
  		driver = allIPOCapsWithPermission();
  		
  		Log.info("Creating Page Objects");

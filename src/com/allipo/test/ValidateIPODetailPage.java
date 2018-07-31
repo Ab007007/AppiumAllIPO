@@ -26,7 +26,7 @@ public class ValidateIPODetailPage extends DriverUtils {
 	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("validateIPODetailPage");
  		driver = allIPOCapsWithPermission();
  		
  		Log.info("Creating Page Objects");

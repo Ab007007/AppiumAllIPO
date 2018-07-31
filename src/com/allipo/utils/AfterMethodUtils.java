@@ -12,11 +12,11 @@ public class AfterMethodUtils {
 		switch(testResult.getStatus())
 		{
 		case ITestResult.SUCCESS:
-			Log.info("Inside AfterMethod block with test "+testName+" having status =  SUCCESS");
+			Log.pass("Inside AfterMethod block with test "+testName+" having status =  SUCCESS");
 			break;
 			
 		case ITestResult.FAILURE:
-			Log.info("Inside AfterMethod block with test "+testName+" having status = FAIL ");
+			Log.fail("Inside AfterMethod block with test "+testName+" having status = FAIL ");
 //			String path = Screenshots.takeScreenshot(driver, testResult.getName()+ExtentReportFactory.getCurrentDateAndTime());
 //			Log.info("Path " + path);
 //			Log.ssPath.add(path);

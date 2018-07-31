@@ -24,7 +24,7 @@ public class ValidateAllowPermissions extends DriverUtils {
 	@BeforeMethod
  	public void preConfig(){
  		Log.configureReport();
- 		Log.startReport("setup");
+ 		Log.startReport("validateLoginPermissionTest");
  		driver = allIPOCaps();
 		//Create Page Objects
  		

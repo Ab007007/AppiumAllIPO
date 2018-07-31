@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
+import com.allipo.utils.AppInteractionUtils;
 import com.allipo.utils.DriverUtils;
 import com.allipo.utils.Log;
 import com.allipo.utils.ScrollScreen;
@@ -26,9 +27,16 @@ AndroidDriver<AndroidElement> driver = null;
 	}
 
 	public void validateHomeScreen() throws InterruptedException{
+//		AppInteractionUtils.makeAppBkAndFrGround(driver);
 		Thread.sleep(10000);
 		Log.info("Validating Home Screen.");
-		DriverUtils.validateHomePage(driver);
+		if(driver.findElementByXPath("//android.widget.TextView[@text='ALL IPO News']").getText().equals("ALL IPO News")){
+			Assert.assertTrue(true, "Validate Home Page Test Passed ");
+			Log.pass("Home Screen Validation successful");
+		}else
+		{
+			Log.fail("Home Screen not displayed " );
+		}
 		
 	}
 	

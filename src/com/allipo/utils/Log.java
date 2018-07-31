@@ -94,12 +94,12 @@ public class Log {
 	public static void pass(String message) {
 		loggerObj.info(message);
 		test.log(LogStatus.PASS, message);
-		writeToText("---PASS : "+ message);
+		writeToText("PASS : "+ message);
 	}
 	public static void fail(String message) {
 		loggerObj.info(message);
 		test.log(LogStatus.FAIL, message);
-		writeToText("---FAIL : "+message);
+		writeToText("FAIL : "+message);
 		writeToText("Refer HTML Screen shot for the latest failed screen");
 		Assert.fail("Test Failed");
 	}
